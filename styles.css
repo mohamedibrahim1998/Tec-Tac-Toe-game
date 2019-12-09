@@ -1,0 +1,47 @@
+h1, h2 {
+  text-align: center;
+}
+
+.row {
+  /* clear: both; */
+  margin: 0 auto;
+  width: 305px;
+}
+
+.row > div {
+  cursor: pointer;
+  float: left;
+  width: 100px;
+  height: 100px;
+  font-size: 5rem;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.top, .center, .bottom{
+  border: 1px black solid;
+}
+
+.top {
+  border-top: none;
+}
+
+.bottom {
+  border-bottom: none;
+}
+
+.left {
+  border-left: none;
+}
+
+.right {
+  border-right: none;
+}  
+
+#res {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 5rem;
+  color: aqua;
+}
+
