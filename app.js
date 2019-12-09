@@ -3,6 +3,7 @@ let resDiv = document.querySelector('#res');
 let ind = 0;
 let toggleX = true;
 let c = 0;
+let arrBool = [false, false, false, false, false, false, false, false, false];
 
 cells.forEach(function(cell, index) {
   cell.addEventListener('click', function(e) {
@@ -15,23 +16,26 @@ cells.forEach(function(cell, index) {
 function make(e, i) {
   resDiv.textContent = '';
   if (c === 9) {
-    console.log('reset');
     reset();
   } else {
-    if (toggleX) {
+    if (toggleX && arrBool[i - 1] === false) {
       e.target.textContent = 'X';
       toggleX = false;
-    } else {
+      ClickOneTimePerGame(i - 1);
+      c++;
+    } else if (arrBool[i - 1] === false) {
       e.target.textContent = 'O';
       toggleX = true;
+      ClickOneTimePerGame(i - 1);
+      c++;
     }
-    c++;
   }
 }
 
 function reset() {
   ind = 0;
   c = 0;
+  arrBool = [false, false, false, false, false, false, false, false, false];
   toggleX = true;
   cells.forEach(function(cell) {
     cell.textContent = '';
@@ -100,3 +104,9 @@ function checkWin() {
     reset();
   }
 }
+
+function ClickOneTimePerGame(ind) {
+  arrBool[ind] = true;
+}
+
+
